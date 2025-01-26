@@ -1,0 +1,16 @@
+spring:
+  application.name: ru-kanji-dictionary-app
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ru_kanji_dictionary_db
+    username: postgres
+    password: pass
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database: postgresql
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
