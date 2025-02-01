@@ -41,12 +41,12 @@ public class KanjiListServiceImpl implements KanjiListService {
     }
 
     @Override
-    public KanjiList getByTitle(String title) {
-        return kanjiListRepository.findByTitle(title).orElseThrow();
+    public KanjiList getByTitle(Long userId, String title) {
+        return kanjiListRepository.findByTitle(userId, title).orElseThrow();
     }
 
     @Override
-    public void delete(Long id) {
-        kanjiListRepository.deleteById(id);
+    public void delete(Long userId, Long id) {
+        kanjiListRepository.deleteById(userId, id);
     }
 }

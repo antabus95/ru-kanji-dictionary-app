@@ -39,8 +39,4 @@ public class KanjiListElementController {
         kanjiListElementService.delete(kanjiListElement.getId());
     }
 
-
-
-
-
 }

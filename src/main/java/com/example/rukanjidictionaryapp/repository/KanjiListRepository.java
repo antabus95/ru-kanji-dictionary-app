@@ -12,7 +12,12 @@ public interface KanjiListRepository extends JpaRepository<KanjiList, Long> {
     @Query(value = "SELECT kl FROM kanji_lists kl WHERE user_id = :userId", nativeQuery = true)
     Optional<List<KanjiList>> findAllKanjiListByUserId(Long userId);
 
-    Optional<KanjiList> findByTitle(String title);
+    @Query(value = "SELECT kl FROM kanji_lists kl WHERE user_id = :userId AND title = :title", nativeQuery = true)
+    Optional<KanjiList> findByTitle(Long userId, String title);
+
+    @Modifying
+    @Query(value = "DELETE FROM kanji_lists WHERE user_id = :userId AND id = :id", nativeQuery = true)
+    void deleteById(Long userId, Long id);
 
 
 }

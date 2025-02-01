@@ -13,9 +13,9 @@ public interface KanjiListService {
 
     KanjiList getById(Long id);
 
-    KanjiList getByTitle(String title);
+    KanjiList getByTitle(Long userId, String title);
 
-    void delete(Long id);
+    void delete(Long userId, Long id);
 
 
 }
